@@ -1,3 +1,25 @@
-- clean: []
-- link: {}
-- shell: []
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+
+    ~/.Xresources: Xresources
+
+    ~/.tmux.conf: tmux.conf
+      
+    ~/.vimrc: vimrc
+    ~/.vim/bundle: vim/bundle
+    ~/.vim/colors: tomorrow-theme/vim/colors
+
+    ~/.tmux/plugins/tpm: tmux/plugins/tpm
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [powerline-fonts/install.sh, Installing powerline fonts]
+  - ["mkdir -p ~/.vim/autoload ~/.vim/bundle ; curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim", Installing pathogen]
+  - ["curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher", Installing fisher]
+  - [fisher rafaelrinaldi/pure z, Installing fish plugins]

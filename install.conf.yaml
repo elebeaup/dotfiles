@@ -24,4 +24,4 @@
   - ["mkdir -p ~/.local/share/nvim/site/autoload ; ln -sf ~/.local/share/nvim/site ~/.vim ; ln -sf .config/nvim/init.vim ~/.vimrc"]
   - ["curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Installing Vim plug]
   - ["curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher", Installing fisher]
-  - [fisher rafaelrinaldi/pure z, Installing fish plugins]
+  - ["fisher add rafaelrinaldi/pure jethrokuan/z", Installing fish plugins]

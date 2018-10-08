@@ -3,15 +3,12 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
+Plug 'vim-airline/vim-airline-themes'
 
 " Initialize plugin system
 " :PlugInstall to install plugins.
 call plug#end()
-
-" Shortcuts
-map <C-n> :NERDTreeToggle<CR>
 
 " NerdTree
 let g:NERDTreeDirArrowExpandable = '▸'

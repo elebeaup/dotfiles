@@ -1,6 +1,8 @@
 - defaults:
     link:
       relink: true
+      force: true
+      create: true
 
 - clean: ['~']
 
@@ -11,15 +13,15 @@
 
     ~/.tmux.conf: tmux.conf
       
-    ~/.vimrc: vimrc
-    ~/.vim/bundle: vim/bundle
-    ~/.vim/colors: tomorrow-theme/vim/colors
+    ~/.config/nvim/init.vim: vimrc
+    ~/.local/share/nvim/site/colors: tomorrow-theme/vim/colors
 
     ~/.tmux/plugins/tpm: tmux/plugins/tpm
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [powerline-fonts/install.sh, Installing powerline fonts]
-  - ["mkdir -p ~/.vim/autoload ~/.vim/bundle ; curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim", Installing pathogen]
+  - ["mkdir -p ~/.local/share/nvim/site/autoload ; ln -sf ~/.local/share/nvim/site ~/.vim ; ln -sf .config/nvim/init.vim ~/.vimrc"]
+  - ["curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Installing Vim plug]
   - ["curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher", Installing fisher]
   - [fisher rafaelrinaldi/pure z, Installing fish plugins]

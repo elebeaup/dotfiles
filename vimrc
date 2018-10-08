@@ -1,11 +1,14 @@
-" </3 vi
-set nocompatible
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
 
-execute pathogen#infect()
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
+" Initialize plugin system
+" :PlugInstall to install plugins.
+call plug#end()
 
 " Shortcuts
 map <C-n> :NERDTreeToggle<CR>
@@ -49,16 +52,30 @@ set autoindent
 set nowrap
 set textwidth=0
 
+" Use the system clipboard
+set clipboard+=unnamedplus
+
 " Turning off auto indent when pasting text into vim
 set pastetoggle=<F3>
 
 " Line break
 set tw=200
 
-let s:clip = '/mnt/c/Windows/System32/clip.exe'
-if executable(s:clip)
-  augroup WSLYank
-    autocmd!
-    autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
-  augroup END
-end
+" -------------------------------------
+"  Shortcuts
+" -------------------------------------
+map <C-n> :NERDTreeToggle<CR>
+
+" Return to normal mode and back to insert
+nmap <Space> i
+imap <S-Space> <Esc>
+" Return to visual mode
+vmap <Space> I
+
+" Move line up/down
+nnoremap <A-j> :m+<CR>==
+nnoremap <A-k> :m-2<CR>==
+inoremap <A-j> <Esc>:m+<CR>==gi
+inoremap <A-k> <Esc>:m-2<CR>==gi
+vnoremap <A-j> :m'>+<CR>gv=gv
+vnoremap <A-k> :m-2<CR>gv=gv

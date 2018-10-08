@@ -4,7 +4,7 @@ My dotfiles
 
 Requires:
 
-- [vim](https://github.com/vim/vim) 
+- [neovim](https://neovim.io/) 
 - [tmux](https://github.com/tmux/tmux)
 - [fish](http://fishshell.com/)
 - rxvt-unicode

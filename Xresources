@@ -1,6 +1,7 @@
 URxvt.perl-ext-common: default,matcher
 
 URxvt.geometry: 74x27
+URxvt.letterSpace: 1
 URxvt.font: xft:DejaVu Sans Mono for Powerline:size=10:antialias=true
 
 !URxvt.termName:         rxvt-256color

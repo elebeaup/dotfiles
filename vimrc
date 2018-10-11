@@ -10,6 +10,23 @@ Plug 'vim-airline/vim-airline-themes'
 " :PlugInstall to install plugins.
 call plug#end()
 
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" :W sudo saves the file 
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
+
+" Shortcuts
+map <C-n> :NERDTreeToggle<CR>
+
 " NerdTree
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -23,31 +40,85 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 
 " -------------------------------------
-"  Appearance settings
+"  VIM User Interface
 " -------------------------------------
+" Turn on the Wild menu
+set wildmenu
+
+" Always show current position
+set ruler
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases 
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch 
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" Add a bit extra margin to the left
+set foldcolumn=1
+
+" Enable mouse
+set mouse=a
+
+" Enable line numbers
+set number
+
+" -------------------------------------
+" Colors and Fonts
+" -------------------------------------
+
+" Enable syntax highlighting
 syntax enable
-set background=dark
+
+" Enable 256 colors palette
 set t_Co=256
 
+" Set utf8 as standard encoding
+set encoding=utf8
+
 colorscheme Tomorrow-Night-Eighties
+set background=dark
 
 " -------------------------------------
 "  File & backup settings
 " -------------------------------------
 
+" Turn backup off
 set nobackup
 set nowb
 set noswapfile
 
-" Use spaces, damn it!
+" -------------------------------------
+" => Text, tab and indent related
+" -------------------------------------
+
+" Use spaces instead of tabs
 set expandtab
+
+" Be smart when using tabs ;)
 set smarttab
+
+" 1 tab == 2 spaces
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set autoindent
-set nowrap
-set textwidth=0
 
 " Use the system clipboard
 set clipboard+=unnamedplus
@@ -55,8 +126,9 @@ set clipboard+=unnamedplus
 " Turning off auto indent when pasting text into vim
 set pastetoggle=<F3>
 
-" Line break
-set tw=200
+" Linebreak on 500 characters
+set lbr
+set tw=500
 
 " -------------------------------------
 "  Shortcuts

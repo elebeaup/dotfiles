@@ -5,6 +5,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
 
 " Initialize plugin system
 " :PlugInstall to install plugins.
@@ -35,7 +36,9 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#tmuxline#snapshot_file = '~/.tmuxline.conf'
-let g:airline_theme='tomorrow'
+"let g:airline_theme='tomorrow'
+let g:airline_theme='gruvbox'
+
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
@@ -92,8 +95,8 @@ set t_Co=256
 " Set utf8 as standard encoding
 set encoding=utf8
 
-colorscheme Tomorrow-Night-Eighties
-set background=dark
+"colorscheme Tomorrow-Night-Eighties
+colorscheme gruvbox
 
 " -------------------------------------
 "  File & backup settings
@@ -148,3 +151,10 @@ inoremap <A-j> <Esc>:m+<CR>==gi
 inoremap <A-k> <Esc>:m-2<CR>==gi
 vnoremap <A-j> :m'>+<CR>gv=gv
 vnoremap <A-k> :m-2<CR>gv=gv
+
+" VimDiff
+if &diff
+    set cursorline
+    map ] ]c
+    map [ [c
+endif

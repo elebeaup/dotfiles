@@ -10,22 +10,24 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Theme
-"Plug 'morhetz/gruvbox'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-"Plug 'NLKNguyen/papercolor-theme'
 
 " Syntax Highlighting And Indentation For 100+ Languages
 Plug 'sheerun/vim-polyglot'
 
 " Autocompletion & Intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'neoclide/coc-tsserver', {'do': 'npm install'}
-"Plug 'neoclide/coc-json', {'do': 'npm install'}
 
 " Utilities
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'ntpeters/vim-better-whitespace'
+"Plug 'tpope/vim-fugitive'
 "Plug 'Konfekt/FastFold'
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+Plug 'mhinz/vim-startify'
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'airblade/vim-gitgutter'
 
 " Fuzzy Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

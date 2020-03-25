@@ -122,6 +122,7 @@ set tw=500
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeHijackNetrw=1
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
 
 " Vim airline
 let g:airline#extensions#tabline#enabled = 1

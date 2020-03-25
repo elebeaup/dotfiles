@@ -25,6 +25,9 @@ augroup END
 " -------------------------------------
 "  VIM User Interface
 " -------------------------------------
+if has("persistent_undo")
+  set undofile
+endif
 
 " By setting the option 'hidden', you can load a buffer in a window that currently has a modified buffer
 set hidden

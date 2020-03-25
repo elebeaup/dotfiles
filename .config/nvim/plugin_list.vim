@@ -28,6 +28,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-startify'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'airblade/vim-gitgutter'
+Plug 'mbbill/undotree'
 
 " Fuzzy Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

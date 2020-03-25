@@ -1,7 +1,16 @@
 " -------------------------------------
 "  Shortcuts
 " -------------------------------------
+"Map some keys for azerty keyboard
+map ² .
+
+" Fast saving 
 nmap <leader>w :w!<cr>
+
+" Use CTRL-S for saving, also in Insert mode
+nnoremap <C-S>                     :update<CR>
+vnoremap <C-S>                <C-C>:update<CR>
+inoremap <C-S>                <C-O>:update<CR>
 
 " navigate back and forth among motions
 noremap <C-M-Left> <C-O>
@@ -14,16 +23,33 @@ noremap <esc> <esc>:noh<return>
 noremap <C-Up> <C-y>
 noremap <C-Down> <C-e>
 
-nnoremap <A-Left> :bprev<CR>
-nnoremap <A-Right> :bnext<CR>
-nnoremap <A-h> :bprev<CR>
-nnoremap <A-l> :bnext<CR>
+" Buffers navigation
+map <A-Left> :bprev<CR>
+map <A-Right> :bnext<CR>
+map <A-h> :bprev<CR>
+map <A-l> :bnext<CR>
 
+ " Close the current buffer
+map <leader>bd :bd<cr>
 nnoremap <F28> :bd<CR>| " <C-F4> showkey -a
+map <leader>! :bd!<cr>
 
-" Increasing or decreasing numbers
-nnoremap <A-a> <C-a>
-nnoremap <A-x> <C-x>
+" Managing buffers
+map <leader>bn :enew<CR>
+map <leader>ba :bufdo bd<cr>
+
+ " Managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+
+" Toggle between this and the last accessed tab
+let g:lasttab = 1
+nmap <Leader><bs> :exe "tabn ".g:lasttab<CR>
+autocmd TabLeave * let g:lasttab = tabpagenr()
+
+" Paste from yank register
+nnoremap "p "0p
 
 " Delete line
 " noremap <C-y> dd
@@ -168,7 +194,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 nnoremap <silent> <space>w  :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
 
 " NerdTree
-map <C-S-E> :NERDTreeToggle<CR>
+map <F2> :NERDTreeToggle<CR>
 nnoremap ,i :NERDTreeFind<CR><c-w><c-w>
 
 " Fzf

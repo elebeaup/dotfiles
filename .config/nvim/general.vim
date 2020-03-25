@@ -6,10 +6,7 @@ set autoread
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-
-" Fast saving
 let g:mapleader = ","
-let g:maplocalleader = ";"
 
 augroup AutoCommandsGroup
   " Reloads vimrc after saving but keep cursor position
@@ -17,11 +14,30 @@ augroup AutoCommandsGroup
 
   " Return to last edit position when opening files (You want this!)
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+  " Expanded when opening a file
+  au BufRead * normal zR
+
+  " NerdTree
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 augroup END
 
 " -------------------------------------
 "  VIM User Interface
 " -------------------------------------
+
+" By setting the option 'hidden', you can load a buffer in a window that currently has a modified buffer
+set hidden
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Do not show mode (displayed by airine)
+set noshowmode
+
+" Higlight the line containing the cursor
+set cursorline
+
 set path+=**
 set wildignore+=**/node_modules/*,**/.git/*,**/target/*
 
@@ -140,6 +156,8 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 
 " Coc
+set sessionoptions+=globals
+
 let g:coc_global_extensions = [
 	\ 'coc-json',
 	\ 'coc-pairs',
@@ -182,14 +200,16 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Expanded when opening a file
-au BufRead * normal zR
-
-" NerdTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 " Fzf
 let g:fzf_command_prefix = 'Fzf'
 
 " Git Cutter
 let g:gitgutter_diff_args = '-w'
+
+" Startify
+let g:startify_session_before_save = [
+      \ 'echo "Cleaning up before saving.."',
+      \ 'silent! NERDTreeClose'
+      \ ]
+
+let g:startify_session_persistence = 1

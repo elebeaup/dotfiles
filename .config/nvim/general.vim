@@ -11,9 +11,12 @@ set autoread
 let g:mapleader = ","
 let g:maplocalleader = ";"
 
-" Reloads vimrc after saving but keep cursor position
-augroup vimrc     " Source vim configuration upon save
+augroup AutoCommandsGroup
+  " Reloads vimrc after saving but keep cursor position
   autocmd! BufWritePost $MYVIMRC,~/.config/nvim/general.vim,~/.config/nvim/plugin_list.vim,~/.config/nvim/shortkeys.vim source % | echom "Reloaded " . $MYVIMRC | redraw
+
+  " Return to last edit position when opening files (You want this!)
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 augroup END
 
 " -------------------------------------

@@ -30,9 +30,9 @@ map <A-h> :bprev<CR>
 map <A-l> :bnext<CR>
 
  " Close the current buffer
-map <leader>bd :bd<cr>
-nnoremap <F28> :bd<CR>| " <C-F4> showkey -a
-map <leader>! :bd!<cr>
+map <leader>bd :BD<cr>
+nnoremap <F28> :BD<CR>| " <C-F4> showkey -a
+map <leader>! :BD!<cr>
 
 " Managing buffers
 map <leader>bn :enew<CR>

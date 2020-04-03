@@ -181,7 +181,6 @@ nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 nnoremap <F36>              :<C-u>CocList outline<cr>| "C-F12
-
 " Search workspace symbols
 nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
@@ -192,20 +191,21 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 nnoremap <silent> <space>w  :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
+" Show open buffers
+nnoremap <silent> <space>b  :<C-u>CocList buffers<CR>
+" Quick open recent files
+nnoremap <silent> <space>h  :<C-u>CocList mru<CR>
+" Find files
+nnoremap <silent> <space>f  :<C-u>CocList files<CR>
+" Rg search
+nnoremap <silent> <space>g  :<C-u>CocList grep<CR>
 
 " NerdTree
 map <F2> :NERDTreeToggle<CR>
 nnoremap ,i :NERDTreeFind<CR><c-w><c-w>
 
-" Fzf
-nnoremap <Leader>b :FzfBuffers<CR>
-nnoremap <Leader>h :FzfHistory<CR>
-nnoremap <Leader>m :FzfMarks<CR>
-nnoremap <C-p> :FzfFiles<CR>
-
 " Have FZF list all tracked files plus untracked files minus your ignored files
 nnoremap <Leader>p :FzfGitFiles --exclude-standard --others --cached<CR>
-nnoremap <Leader>gt :FzfRg<CR>
 
 " Coc
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim

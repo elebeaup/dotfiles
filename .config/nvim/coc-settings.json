@@ -5,6 +5,7 @@
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
+  "list.limitLines": 100,
   "languageserver": {
     "terraform": {
       "command": "terraform-lsp",

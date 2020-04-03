@@ -144,6 +144,7 @@ set tw=500
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeHijackNetrw=1
+let g:NERDTreeMouseMode=3
 autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
 
 " Vim airline
@@ -210,6 +211,8 @@ let g:fzf_command_prefix = 'Fzf'
 let g:gitgutter_diff_args = '-w'
 
 " Startify
+let g:startify_session_dir=$HOME . '/.vim/sessions'
+
 let g:startify_session_before_save = [
       \ 'echo "Cleaning up before saving.."',
       \ 'silent! NERDTreeClose'

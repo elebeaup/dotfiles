@@ -25,7 +25,9 @@ noremap <C-Down> <C-e>
 
 " Buffers navigation
 map <A-Left> :bprev<CR>
+imap <silent> <A-Left> <C-O>:bprev<CR>
 map <A-Right> :bnext<CR>
+imap <silent> <A-Right> <C-O>:bnext<CR>
 map <A-h> :bprev<CR>
 map <A-l> :bnext<CR>
 
@@ -52,11 +54,13 @@ autocmd TabLeave * let g:lasttab = tabpagenr()
 nnoremap "p "0p
 
 " Delete line
-" noremap <C-y> dd
+imap <C-y> <C-O>dd
+
 noremap Y y$
 
 " Duplicate line
 nmap <C-d> yyp
+imap <silent> <C-d> <C-O>:t.<CR>
 
 " Select all
 nnoremap <C-A> ggVG

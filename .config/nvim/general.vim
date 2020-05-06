@@ -18,8 +18,8 @@ augroup AutoCommandsGroup
   " Expanded when opening a file
   au BufRead * normal zR
 
-  " NerdTree
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  " Prevent the coc-explorer window from being replaced by another window
+  autocmd BufEnter * if bufname('#') =~# '^\[coc-explorer]\-.$' | b# | endif
 augroup END
 
 " -------------------------------------
@@ -140,13 +140,6 @@ set tw=500
 " -------------------------------------
 "  Plugin setup
 " -------------------------------------
-" NerdTree
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeHijackNetrw=1
-let g:NERDTreeMouseMode=3
-autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
-
 " Vim airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 1
@@ -154,6 +147,8 @@ let g:airline#extensions#tmuxline#snapshot_file = '~/.tmuxline.conf'
 "let g:airline_theme='tomorrow'
 "let g:airline_theme='gruvbox'
 let g:airline_theme='onehalfdark'
+let g:airline_exclude_filetypes = ["coc-explorer"]
+
 "let g:airline_theme='papercolor'
 
 let g:airline_powerline_fonts = 1
@@ -165,7 +160,8 @@ set sessionoptions+=globals
 let g:coc_global_extensions = [
 	\ 'coc-json',
 	\ 'coc-pairs',
-	\ 'coc-tsserver'
+	\ 'coc-tsserver',
+  \ 'coc-explorer'
 \ ]
 
 function! s:check_back_space() abort
@@ -212,10 +208,5 @@ let g:gitgutter_diff_args = '-w'
 
 " Startify
 let g:startify_session_dir=$HOME . '/.vim/sessions'
-
-let g:startify_session_before_save = [
-      \ 'echo "Cleaning up before saving.."',
-      \ 'silent! NERDTreeClose'
-      \ ]
 
 let g:startify_session_persistence = 1

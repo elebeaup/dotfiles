@@ -4,7 +4,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 " File type icons
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 "Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline-themes'
@@ -29,7 +28,6 @@ Plug 'mhinz/vim-startify'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'airblade/vim-gitgutter'
 Plug 'mbbill/undotree'
-Plug 'qpkorr/vim-bufkill'
 
 " Fuzzy Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

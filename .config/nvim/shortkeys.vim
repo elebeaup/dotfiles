@@ -32,9 +32,9 @@ map <A-h> :bprev<CR>
 map <A-l> :bnext<CR>
 
  " Close the current buffer
-map <leader>bd :BD<cr>
-nnoremap <F28> :BD<CR>| " <C-F4> showkey -a
-map <leader>! :BD!<cr>
+map <leader>bd :bd<cr>
+nnoremap <F28> :bd<CR>| " <C-F4> showkey -a
+map <leader>! :bd!<cr>
 
 " Managing buffers
 map <leader>bn :enew<CR>
@@ -204,9 +204,7 @@ nnoremap <silent> <space>f  :<C-u>CocList files<CR>
 " Rg search
 nnoremap <silent> <space>g  :<C-u>CocList grep<CR>
 
-" NerdTree
-map <F2> :NERDTreeToggle<CR>
-nnoremap ,i :NERDTreeFind<CR><c-w><c-w>
+map <silent> <F2> :<C-u>CocCommand explorer --toggle<CR>
 
 " Have FZF list all tracked files plus untracked files minus your ignored files
 nnoremap <Leader>p :FzfGitFiles --exclude-standard --others --cached<CR>

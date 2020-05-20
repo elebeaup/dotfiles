@@ -10,12 +10,15 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Theme
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'tomasiser/vim-code-dark'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Syntax Highlighting And Indentation For 100+ Languages
 Plug 'sheerun/vim-polyglot'
 
 " Autocompletion & Intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf'
 
 " Utilities
 "Plug 'jiangmiao/auto-pairs'
@@ -25,9 +28,12 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-startify'
-Plug 'MattesGroeger/vim-bookmarks'
+" Place, toggle and display marks
+Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
 Plug 'mbbill/undotree'
+" Enable repeating supported plugin maps with .
+Plug 'tpope/vim-repeat'
 
 " Fuzzy Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

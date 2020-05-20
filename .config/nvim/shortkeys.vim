@@ -66,7 +66,7 @@ imap <silent> <C-d> <C-O>:t.<CR>
 nnoremap <C-A> ggVG
 
 " Terminal
-tnoremap <Esc><Esc> <C-\><C-n>
+tnoremap <Char-28> <C-\><C-n>| " <C-*> showkey -a
 
 " Switch between Windows
 " Use <C-w> twice to toggle between open windows

@@ -6,7 +6,7 @@ set autoread
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let g:mapleader = ","
+let g:mapleader = "ù"
 
 augroup AutoCommandsGroup
   " Reloads vimrc after saving but keep cursor position

@@ -99,7 +99,8 @@ vnoremap <F9> zf
 vnoremap <Leader>za <Esc>`<kzfgg`>jzfG`<| " Everything above and below will be folded.
 
 " Search
-vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>|" To search for visually selected text
+vnoremap <silent> <C-f> y/\V<c-r>=escape(@",'/\')<CR><CR>|" To search for visually selected text
+vnoremap <C-r> "hy:%s/\V<C-r>=escape(getreg('h"'),'/\')<CR>//gc<left><left><left>|" To search and replace selected text
 
 " Coc
 " Use tab for trigger completion with characters ahead and navigate.

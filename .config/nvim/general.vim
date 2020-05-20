@@ -203,6 +203,27 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Fzf
 let g:fzf_command_prefix = 'Fzf'
 
+command! -bang -nargs=? -complete=dir FzfFiles
+    \ call fzf#vim#files(<q-args>, {'options': ['--preview', 'bat --style=numbers --color=always {}']}, <bang>0)
+
+command! -bang -nargs=* FzfTags
+    \ call fzf#vim#tags(<q-args>, {'options': '-n1'}, <bang>0)
+
+" Scoped History Finders
+command! FzfPHistory call fzf#run({
+      \ 'source':  s:file_history_from_directory(getcwd()),
+      \ 'sink':    'edit',
+      \ 'options': '-m -x +s',
+      \ 'down':    '40%' })
+
+function! s:file_history_from_directory(directory)
+  return fzf#vim#_uniq(filter(fzf#vim#_recent_files(), "s:file_is_in_directory(fnamemodify(v:val, ':p'), a:directory)"))
+endfunction
+
+function! s:file_is_in_directory(file, directory)
+  return filereadable(a:file) && match(a:file, a:directory . '/') == 0
+endfunction
+
 " Git Cutter
 let g:gitgutter_diff_args = '-w'
 

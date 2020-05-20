@@ -1,7 +1,10 @@
 {
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "json"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "json"
+  ],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
@@ -9,9 +12,13 @@
   "languageserver": {
     "terraform": {
       "command": "terraform-lsp",
-      "filetypes": ["terraform"],
+      "rootPatterns": [
+        ".terraform"
+      ],
+      "filetypes": [
+        "terraform"
+      ],
       "initializationOptions": {}
     }
   }
 }
-

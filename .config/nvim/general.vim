@@ -140,20 +140,6 @@ set tw=500
 " -------------------------------------
 "  Plugin setup
 " -------------------------------------
-" Vim airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tmuxline#enabled = 1
-let g:airline#extensions#tmuxline#snapshot_file = '~/.tmuxline.conf'
-"let g:airline_theme='tomorrow'
-"let g:airline_theme='gruvbox'
-let g:airline_theme='onehalfdark'
-let g:airline_exclude_filetypes = ["coc-explorer"]
-
-"let g:airline_theme='papercolor'
-
-let g:airline_powerline_fonts = 1
-set laststatus=2
-
 " Coc
 set sessionoptions+=globals
 

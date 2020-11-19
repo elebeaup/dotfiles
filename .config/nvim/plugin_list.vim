@@ -4,11 +4,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 " File type icons
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'vim-airline/vim-airline'
-"Plug 'edkolev/tmuxline.vim'
-Plug 'vim-airline/vim-airline-themes'
-
 " Theme
+Plug 'itchyny/lightline.vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'tomasiser/vim-code-dark'
 Plug 'NLKNguyen/papercolor-theme'

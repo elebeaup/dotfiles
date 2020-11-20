@@ -35,6 +35,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 " Delete buffers without closing your windows
 Plug 'moll/vim-bbye'
+" Smooth scrolling
+Plug 'psliwka/vim-smoothie'
 
 " Fuzzy Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

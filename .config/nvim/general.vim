@@ -196,7 +196,7 @@ endfunction
 
 function! LightLineFilename()
   return &ft ==# 'coc-explorer' || &ft ==# 'startify' ? '' :
-        \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+        \ expand('%:t') !=# '' ? expand('%:~:.') : '[No Name]'
 endfunction
 
 function! LightLineReadonly()

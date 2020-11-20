@@ -19,10 +19,6 @@ noremap <C-M-Right> <C-I>
 " Clear highlighting
 noremap <esc> <esc>:noh<return>
 
-" Move screen up and down
-noremap <C-Up> <C-y>
-noremap <C-Down> <C-e>
-
 " Buffers navigation
 map <A-Left> :bprev<CR>
 imap <silent> <A-Left> <C-O>:bprev<CR>
@@ -59,7 +55,8 @@ imap <C-y> <C-O>dd
 noremap Y y$
 
 " Duplicate line
-nmap <C-d> yyp
+nmap <S-M-Down> yyp
+nmap <S-M-Up> yyP
 imap <silent> <C-d> <C-O>:t.<CR>
 
 " Select all

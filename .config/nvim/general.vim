@@ -217,3 +217,11 @@ let g:gitgutter_diff_args = '-w'
 let g:startify_session_dir=$HOME . '/.vim/sessions'
 
 let g:startify_session_persistence = 1
+
+" Unimpaired
+nmap ( [
+nmap ) ]
+omap ( [
+omap ) ]
+xmap ( [
+xmap ) ]

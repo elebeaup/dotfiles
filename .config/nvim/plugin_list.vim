@@ -31,6 +31,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mbbill/undotree'
 " Enable repeating supported plugin maps with .
 Plug 'tpope/vim-repeat'
+" Add complementary pairs of mappings
+Plug 'tpope/vim-unimpaired'
 
 " Fuzzy Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

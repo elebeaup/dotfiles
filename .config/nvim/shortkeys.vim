@@ -32,13 +32,13 @@ map <A-h> :bprev<CR>
 map <A-l> :bnext<CR>
 
  " Close the current buffer
-map <leader>bd :bd<cr>
-nnoremap <F28> :bd<CR>| " <C-F4> showkey -a
-map <leader>! :bd!<cr>
+map <leader>bd :Bdelete<CR>
+nnoremap <F28> :Bdelete<CR>| " <C-F4> showkey -a
+map <leader>! :Bdelete!<CR>
 
 " Managing buffers
 map <leader>bn :enew<CR>
-map <leader>ba :bufdo bd<cr>
+map <leader>ba :bufdo Bdelete<CR>
 
  " Managing tabs
 map <leader>tn :tabnew<cr>

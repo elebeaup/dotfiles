@@ -33,6 +33,8 @@ Plug 'mbbill/undotree'
 Plug 'tpope/vim-repeat'
 " Add complementary pairs of mappings
 Plug 'tpope/vim-unimpaired'
+" Delete buffers without closing your windows
+Plug 'moll/vim-bbye'
 
 " Fuzzy Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

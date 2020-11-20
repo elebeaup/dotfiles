@@ -9,17 +9,16 @@ set autoread
 let g:mapleader = "ù"
 
 augroup AutoCommandsGroup
+  autocmd!
+
   " Reloads vimrc after saving but keep cursor position
-  autocmd! BufWritePost $MYVIMRC,~/.config/nvim/general.vim,~/.config/nvim/plugin_list.vim,~/.config/nvim/shortkeys.vim source % | echom "Reloaded " . $MYVIMRC | redraw
+  autocmd BufWritePost $MYVIMRC,~/.config/nvim/general.vim,~/.config/nvim/plugin_list.vim,~/.config/nvim/shortkeys.vim source % | echom "Reloaded " . $MYVIMRC | redraw
 
   " Return to last edit position when opening files (You want this!)
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
   " Expanded when opening a file
   au BufRead * normal zR
-
-  " Prevent the coc-explorer window from being replaced by another window
-  autocmd BufEnter * if bufname('#') =~# '^\[coc-explorer]\-.$' | b# | endif
 augroup END
 
 " -------------------------------------
@@ -185,6 +184,43 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Light line
+function! LightLinePercent()
+  return &ft ==# 'coc-explorer' || &ft ==# 'startify' ? '' : line('.') * 100 / line('$') . '%'
+endfunction
+
+function! LightLineLineInfo()
+  return &ft ==# 'coc-explorer' || &ft ==# 'startify' ? '' : line('.').':'. col('.')
+endfunction
+
+function! LightLineFilename()
+  return &ft ==# 'coc-explorer' || &ft ==# 'startify' ? '' :
+        \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+endfunction
+
+function! LightLineReadonly()
+  return &readonly && &ft !=# 'help' && &ft !=# 'coc-explorer' ? 'RO' : ''
+endfunction
+
+function! LightLineFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! LightLineFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
+let g:lightline = {
+      \ 'component_function': {
+      \   'filetype': 'LightLineFiletype',
+      \   'fileformat': 'LightLineFileformat',
+      \   'percent': 'LightLinePercent',
+      \   'lineinfo': 'LightLineLineInfo',
+      \   'filename': 'LightLineFilename',
+      \   'readonly': 'LightLineReadonly'
+      \ }
+      \ }
 
 " Fzf
 let g:fzf_command_prefix = 'Fzf'

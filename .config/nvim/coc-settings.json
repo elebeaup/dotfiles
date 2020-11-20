@@ -4,6 +4,8 @@
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
+  "explorer.icon.enableVimDevicons": true,
+  "explorer.previewAction.onHover": false,
   "list.limitLines": 100,
   "languageserver": {
     "terraform": {

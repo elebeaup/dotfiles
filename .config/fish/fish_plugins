@@ -6,5 +6,5 @@ reitzig/sdkman-for-fish
 elebeaup/fish-kube-prompt
 oh-my-fish/plugin-aws
 jethrokuan/fzf
-jorgebucaran/fish-nvm
 jorgebucaran/fisher
+jorgebucaran/nvm.fish

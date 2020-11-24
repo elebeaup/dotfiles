@@ -6,9 +6,7 @@ Plug 'ryanoasis/vim-devicons'
 
 " Theme
 Plug 'itchyny/lightline.vim'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'tomasiser/vim-code-dark'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'rakr/vim-one'
 
 " Syntax Highlighting And Indentation For 100+ Languages
 Plug 'sheerun/vim-polyglot'

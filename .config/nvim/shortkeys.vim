@@ -221,3 +221,7 @@ nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
+
+" Float term
+let g:floaterm_keymap_toggle = '<F12>'
+let g:floaterm_keymap_next = '<F24>'| "S-F12

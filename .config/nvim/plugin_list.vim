@@ -37,6 +37,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'moll/vim-bbye'
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
+" Floating window
+Plug 'voldikss/vim-floaterm'
 
 " Fuzzy Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

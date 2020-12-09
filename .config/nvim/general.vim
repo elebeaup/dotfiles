@@ -139,3 +139,10 @@ set pastetoggle=<F3>
 " Linebreak on/ 500 characters
 set lbr
 set tw=500
+
+" Command line completion
+set wildmode=longest,full
+cnoremap <expr> <up> wildmenumode() ? "\<C-p>" : "\<Up>"
+cnoremap <expr> <down> wildmenumode() ? "\<C-n>" : "\<Down>"
+cnoremap <expr> <left> wildmenumode() ? "\<SPACE><BS><Left>" : "\<Left>"
+cnoremap <expr> <right> wildmenumode() ? "\<SPACE><BS><Right>" : "\<Right>"

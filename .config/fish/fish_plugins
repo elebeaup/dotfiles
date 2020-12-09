@@ -5,7 +5,7 @@ evanlucas/fish-kubectl-completions
 reitzig/sdkman-for-fish
 elebeaup/fish-kube-prompt
 oh-my-fish/plugin-aws
-jethrokuan/fzf
 jorgebucaran/fisher
 jorgebucaran/nvm.fish
 wfxr/forgit
+PatrickF1/fzf.fish
